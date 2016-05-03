@@ -8,8 +8,12 @@ package client;
  */
 public class Connection {
 	
-	general.Message retrieve(){
+	static general.Message retrieve(){
 		return null;	
+	}
+	
+	static void send(){
+			
 	}
 	
 	

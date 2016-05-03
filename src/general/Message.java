@@ -8,24 +8,20 @@ package general;
  */
 
 public abstract class Message {
-	String sender;		//Person that sends the 
-	String retriever;	//Person(s) that retrieve the message
+	String senderPerson;		//Person that sends the
+	String senderDevice;		//ID of the Sending device
+	String retrieverPerson;		//Person(s)/Device(s) that retrieve the message
 	
-	public Message(String sender, String retriever) {
-		this.sender = sender;
-		this.retriever = retriever;
+	public Message(String senderPerson, String senderDevice, String retrieverPerson) {
+		this.senderPerson = senderPerson;
+		this.senderDevice = senderDevice;
+		this.retrieverPerson = retrieverPerson;
 	}
 	
 	String getSender() {
-		return sender;
-	}
-	void setSender(String sender) {
-		this.sender = sender;
+		return senderPerson;
 	}
 	String getRetriever() {
-		return retriever;
+		return retrieverPerson;
 	}
-	void setRetriever(String retriever) {
-		this.retriever = retriever;
-	}	
 }
