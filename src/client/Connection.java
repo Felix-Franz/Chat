@@ -15,7 +15,4 @@ public class Connection {
 	static void send(){
 			
 	}
-	
-	
-	
 }
