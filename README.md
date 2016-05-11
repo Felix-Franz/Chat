@@ -6,4 +6,4 @@ A Chat programmed in java
 
 ## Problems
 - Retrieving Data from Server
-- Saving Data to HDD (Server & Client) --> speichern mit ArrayList?
+- Saving Data to HDD (Server & Client) --> save into an ArrayList?
