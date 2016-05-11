@@ -6,10 +6,10 @@ package general;
  * This class implements a text message
  *
  */
-public class MessageText extends Message {
+public class MessageUserText extends MessageUser{
 	private String text; //Message Text
 	
-	MessageText(String senderPerson, String senderDevice, String retriever, String text){
+	MessageUserText(String senderPerson, String senderDevice, String retriever, String text){
 		super(senderPerson, senderDevice, retriever);
 		this.text = text;
 	}
