@@ -9,8 +9,8 @@ package general;
 
 public abstract class MessageUser extends Message{
 
-	public MessageUser(String senderPerson, String senderDevice, String retrieverPerson) {
-		super(senderPerson, senderDevice, retrieverPerson);
+	public MessageUser(String senderPerson, String senderDevice, String receiverPerson) {
+		super(senderPerson, senderDevice, receiverPerson);
 	}
 	
 	//Timestamp timestampSent		//Timestamp created during the send process of the message

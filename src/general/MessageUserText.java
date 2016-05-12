@@ -9,8 +9,15 @@ package general;
 public class MessageUserText extends MessageUser{
 	private String text; //Message Text
 	
-	MessageUserText(String senderPerson, String senderDevice, String retriever, String text){
-		super(senderPerson, senderDevice, retriever);
+	/**
+	 * This creates a Text message
+	 * @param senderPerson Person that sends the message
+	 * @param senderDevice Device that sends the message
+	 * @param receiverPerson Person that recieves the message
+	 * @param text the message
+	 */
+	MessageUserText(String senderPerson, String senderDevice, String receiverPerson, String text){
+		super(senderPerson, senderDevice, receiverPerson);
 		this.text = text;
 	}
 
