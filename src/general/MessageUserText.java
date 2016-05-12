@@ -21,13 +21,9 @@ public class MessageUserText extends MessageUser{
 		this.text = text;
 	}
 
-	String getText() {
+	public String getText() {
 		return text;
 	}
 
-	void setText(String text) {
-		this.text = text;
-	}
-	
 	
 }
