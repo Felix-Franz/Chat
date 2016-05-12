@@ -16,7 +16,7 @@ public class MessageUserText extends MessageUser{
 	 * @param receiverPerson Person that recieves the message
 	 * @param text the message
 	 */
-	MessageUserText(String senderPerson, String senderDevice, String receiverPerson, String text){
+	public MessageUserText(String senderPerson, String senderDevice, String receiverPerson, String text){
 		super(senderPerson, senderDevice, receiverPerson);
 		this.text = text;
 	}

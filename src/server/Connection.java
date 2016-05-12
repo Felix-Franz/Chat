@@ -4,16 +4,14 @@ import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Connection implements general.Connection {
+public class Connection {
 
-	@Override
-	public void send(general.Message m) throws Exception {
+	public static void send(general.Message m) throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public general.Message receive() throws Exception {		//Receives a message from the client
+	public static general.Message receive() throws Exception {		//Receives a message from the client
 		try {
 			ServerSocket waitingConnection = new ServerSocket(general.Settings.PORT);
 			Socket connection = waitingConnection.accept();

@@ -9,10 +9,9 @@ import java.net.Socket;
  * This class implements the sending and retrieving methods
  *
  */
-public class Connection implements general.Connection{
+public class Connection{
 
-	@Override
-	public void send(general.Message msg) throws Exception {		//Sends a Message (Object) to the Server
+	public static void send(general.Message msg) throws Exception {		//Sends a Message (Object) to the Server
 		try {
 			Socket connection = new Socket(general.Settings.URL, general.Settings.PORT);
 			ObjectOutputStream output = new ObjectOutputStream(connection.getOutputStream());
@@ -24,8 +23,7 @@ public class Connection implements general.Connection{
 		}
 	}
 
-	@Override
-	public general.Message receive() throws Exception {
+	public static general.Message receive() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
