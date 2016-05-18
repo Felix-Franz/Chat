@@ -18,10 +18,10 @@ public abstract class Message {
 		this.receiverPerson = receiverPerson;
 	}
 	
-	String getSender() {
+	public String getSender() {
 		return senderPerson;
 	}
-	String getRetriever() {
+	public String getRetriever() {
 		return receiverPerson;
 	}
 }
