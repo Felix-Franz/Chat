@@ -23,6 +23,9 @@ public abstract class Message implements Serializable {
 	public String getSender() {
 		return senderPerson;
 	}
+	public String getSenderDevice() {
+		return senderDevice;
+	}
 	public String getRetriever() {
 		return receiverPerson;
 	}
