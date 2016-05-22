@@ -1,8 +1,10 @@
 package testCases;
 
 public class MessageTextCreate {
+	static general.MessageUserText msg;
+	
 	public static void main(String[] args) {
-		general.MessageUserText msg = new general.MessageUserText("Hans", "Testdevice", "Peter", "Dies ist eine Nachricht!");
+		msg = new general.MessageUserText("Hans", "Testdevice", "Peter", "Dies ist eine Nachricht!");
 		System.out.println(msg.getText());
 	}
 }

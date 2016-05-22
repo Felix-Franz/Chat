@@ -1,6 +1,8 @@
 package testCases;
 
 public class SendMessageFromClientToServer implements Runnable{
+	static general.MessageUserText clientMessage;
+	static general.MessageUserText serverMessage;
 
 	public static void main(String[] args) {
 		//Runs Client Thread
@@ -8,15 +10,14 @@ public class SendMessageFromClientToServer implements Runnable{
 		client.start();
 		
 		//Runs Server Thread
-		general.MessageUserText msg = null;
 		try {
-			msg = (general.MessageUserText) server.Connection.receive();
+			serverMessage = (general.MessageUserText) server.Connection.receive();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		System.out.println(msg.getText());
+		System.out.println(serverMessage.getText());
 	}
 	
 	@Override
@@ -28,9 +29,9 @@ public class SendMessageFromClientToServer implements Runnable{
 			e.printStackTrace();
 		}
 		
-		general.Message msg = new general.MessageUserText("Hans", "Testdevice", "Peter", "Dies ist eine Nachricht!");
+		clientMessage = new general.MessageUserText("Hans", "Testdevice", "Peter", "Dies ist eine Nachricht!");
 		try {
-			client.Connection.send(msg);
+			client.Connection.send(clientMessage);
 		} catch (Exception e) {
 			System.out.println(e.getStackTrace());
 		}
