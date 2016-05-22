@@ -3,9 +3,11 @@ package testCases;
 public class SendMessageFromClientToServer implements Runnable{
 
 	public static void main(String[] args) {
+		//Runs Client Thread
 		Thread client = new Thread(new SendMessageFromClientToServer());
 		client.start();
 		
+		//Runs Server Thread
 		general.MessageUserText msg = null;
 		try {
 			msg = (general.MessageUserText) server.Connection.receive();
@@ -26,11 +28,11 @@ public class SendMessageFromClientToServer implements Runnable{
 			e.printStackTrace();
 		}
 		
-		general.Message msg = new general.MessageUserText(null, null, null, "eine gesendete Nachricht!");
+		general.Message msg = new general.MessageUserText("Hans", "Testdevice", "Peter", "Dies ist eine Nachricht!");
 		try {
 			client.Connection.send(msg);
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.getStackTrace());
 		}
 	}
 

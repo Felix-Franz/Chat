@@ -1,5 +1,7 @@
 package general;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author Felix
@@ -7,7 +9,7 @@ package general;
  *
  */
 
-public abstract class Message {
+public abstract class Message implements Serializable {
 	private String senderPerson;		//Person that sends the
 	private String senderDevice;		//ID of the Sending device
 	private String receiverPerson;		//Person(s)/Device(s) that retrieve the message

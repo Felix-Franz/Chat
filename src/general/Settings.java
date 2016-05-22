@@ -8,5 +8,5 @@ package general;
  */
 public final class Settings {
 	public static String URL = "127.0.0.1";	//Server URL
-	public static final int PORT = 5050;		//Server Port
+	public static final int PORT = 5000;		//Server Port
 }
