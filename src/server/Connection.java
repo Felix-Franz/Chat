@@ -1,20 +1,34 @@
 package server;
 
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
 
 public class Connection {
 
-	public static void send(general.Message m) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public static void send(general.Message msg /* HashMap<general.Device, general.Message> msg /*Referenz auf die Liste mit Personen & Nachricht*/) throws Exception {
+		try {
+			ServerSocket waitingConnection = new ServerSocket(general.Settings.PORT);
+			Socket connection = waitingConnection.accept();
+			
+			ObjectOutputStream output = new ObjectOutputStream(connection.getOutputStream());
+			output.writeObject(msg);
+			
+			output.close();
+			connection.close();
+			waitingConnection.close();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public static general.Message receive() throws Exception {		//Receives a message from the client
 		try {
 			ServerSocket waitingConnection = new ServerSocket(general.Settings.PORT);
 			Socket connection = waitingConnection.accept();
+			
 			ObjectInputStream input = new ObjectInputStream(connection.getInputStream());
 			Object receivedMsg = input.readObject();
 			if (!(receivedMsg instanceof general.Message)){
@@ -25,6 +39,7 @@ public class Connection {
 			}
 			general.Message msg = (general.Message) receivedMsg;
 			input.close();
+			
 			connection.close();
 			waitingConnection.close();
 			return msg;
