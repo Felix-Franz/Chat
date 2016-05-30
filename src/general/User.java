@@ -1,5 +1,7 @@
 package general;
 
+import java.util.ArrayList;
+
 /**
  * 
  * @author Felix
@@ -12,6 +14,6 @@ public class User {
 	private String username;
 	private String firstname;
 	private String lastname;
-	private Device[] device;
+	private ArrayList<Device> device;
 	private String lastOnline;
 }
