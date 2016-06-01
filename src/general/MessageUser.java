@@ -8,9 +8,15 @@ package general;
  */
 
 public abstract class MessageUser extends Message{
+	private String receiverPerson;		//Person(s)/Device(s) that retrieve the message
 
 	public MessageUser(String senderPerson, String senderDevice, String receiverPerson) {
-		super(senderPerson, senderDevice, receiverPerson);
+		super(senderPerson, senderDevice);
+		this.receiverPerson = receiverPerson;
+	}
+
+	public String getRetriever() {
+		return receiverPerson;
 	}
 	
 	//Timestamp timestampSent		//Timestamp created during the send process of the message

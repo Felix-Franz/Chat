@@ -12,12 +12,10 @@ import java.io.Serializable;
 public abstract class Message implements Serializable {
 	private String senderPerson;		//Person that sends the
 	private String senderDevice;		//ID of the Sending device
-	private String receiverPerson;		//Person(s)/Device(s) that retrieve the message
 	
-	public Message(String senderPerson, String senderDevice, String receiverPerson) {
+	public Message(String senderPerson, String senderDevice) {
 		this.senderPerson = senderPerson;
 		this.senderDevice = senderDevice;
-		this.receiverPerson = receiverPerson;
 	}
 	
 	public String getSender() {
@@ -26,7 +24,9 @@ public abstract class Message implements Serializable {
 	public String getSenderDevice() {
 		return senderDevice;
 	}
-	public String getRetriever() {
-		return receiverPerson;
+	
+	public static Message convertToMessage(Object obj) throws Exception{	//TODO change Exception Type
+		if (!(obj instanceof general.Message)) return (general.Message) obj;
+		else throw new Exception("object is no message!");
 	}
 }
