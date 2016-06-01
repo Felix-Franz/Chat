@@ -112,6 +112,7 @@ public class Connection implements Runnable {
 		}
 		while(true){
 			//TODO send and receive messages
+			
 		}
 	}
 	

@@ -15,16 +15,19 @@ public class MessageList {
 	public MessageList(general.User user, general.Device device){
 		this.user = user;
 		this.device = device;
+		list.add(this);
 	}
 	
 	public void AddMessage(general.Message message){
 		this.message.add(message);
 	}
 	
-	public general.Message RemoveMessage(){
+	public general.Message RemoveMessage()throws Exception{ //TODO change Exception
 		return RemoveMessage(0);
 	}
-	public general.Message RemoveMessage(int index){
+	public general.Message RemoveMessage(int index)throws Exception{ //TODO change Exception
+		if (index>=message.size()) throw new Exception("index to big for this message list!");
+		if (message.size()<=1) list.remove(this);
 		return message.remove(index);
 	}
 	
